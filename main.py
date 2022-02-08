@@ -1,10 +1,11 @@
 class CreditCard():
     """Custom credit card"""
-    def __init__(self,cutomer,bank,account,limit):
+    def __init__(self,cutomer,bank,account,limit): # __init__ is constructor
+
         """
         blance is zero at the start
         cutomer:  the name if the cutomer (ex: 'john anderson')
-        bank : the name of the bank (ex: 'people back')
+        bank : the name of the bank (ex: 'people b<sda></sda>ack')
         account : account number (ex: "4121 1233 1234 1314")
         limit :credit card limit (in dollars)
         """
@@ -55,5 +56,12 @@ class CreditCard():
 
 
 
+#
+# help(CreditCard)
 
-help(CreditCard)
+
+cc = CreditCard('Ehsan Rahimi' , "bank1",'1234 1234 1234 1234',1000) # instance of CreditCard has 5 instance variables
+cc.get_balance()
+cc.get_limit()
+cc.make_payment(100)
+cc.get_balance()
