@@ -9,7 +9,7 @@ class CreditCard():
         account : account number (ex: "4121 1233 1234 1314")
         limit :credit card limit (in dollars)
         """
-        self._balance = 0
+        self.__balance = 0
         self.__cutomer  = cutomer
         self.__bank = bank
         self.__account = account
@@ -64,4 +64,4 @@ cc = CreditCard('Ehsan Rahimi' , "bank1",'1234 1234 1232 1234',1000) # instance 
 
 cc.get_account()
 cc.get_bank()
-cc._
+cc._CreditCard__balance  # accessing private class
