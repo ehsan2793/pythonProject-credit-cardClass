@@ -14,6 +14,10 @@ class CreditCard():
         self._account = account
         self._limit = limit
 
+    def get_customer(self):
+        """ Return the name fo the customer """
+        return self._cutomer
+
 
 
 
