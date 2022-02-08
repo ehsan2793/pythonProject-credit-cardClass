@@ -32,7 +32,7 @@ class CreditCard():
         """Return the credit card limit"""
         return self.__limit
 
-    def get_balance(self):
+    def _get_balance(self):
         """Return the credit card balance"""
         return self.__balance
 
@@ -64,4 +64,3 @@ cc = CreditCard('Ehsan Rahimi' , "bank1",'1234 1234 1232 1234',1000) # instance 
 
 cc.get_account()
 cc.get_bank()
-cc._CreditCard__balance  # accessing private class
