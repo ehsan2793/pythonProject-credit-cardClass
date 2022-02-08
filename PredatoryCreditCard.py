@@ -15,8 +15,8 @@ class PredatoryCreditCard(CreditCard):
 
     def __init__(self,customer,bank,account,limit,apr):
         super().__init__(customer,bank,account,limit)
-        self.__balance = 0
-        self.__apr = apr
+        self._balance = 0
+        self._apr = apr
 
 
     def charge(self,price):
@@ -28,25 +28,25 @@ class PredatoryCreditCard(CreditCard):
         """
         success = super().charge(price)
         if not success:
-            self.__balance += 5
+            self._balance += 5
 
         return success
 
 
     def process_monthly(self):
         """Assess monthly interest on outstanding balance"""
-        if self.__balance > 0:
+        if self._balance > 0:
             # if balce is greater than 0 that we add APR to interest
-            monthly = pow( 1 + self.__apr, 1/12)
-            self.__balance *= monthly
+            monthly = pow( 1 + self._apr, 1/12)
+            self._balance *= monthly
 
 
 p = PredatoryCreditCard('Ehsan Rahimi' , "bank1",'1234 12312113123123 1232 1234',1000,0.2)
 
 
 p.get_account()
+p.get_bank()
 p.get_balance()
-
 p.charge(1)
 p.charge(995)
 p.charge(5000)

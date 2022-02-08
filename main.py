@@ -9,49 +9,49 @@ class CreditCard():
         account : account number (ex: "4121 1233 1234 1314")
         limit :credit card limit (in dollars)
         """
-        self.__balance = 0
-        self.__cutomer  = cutomer
-        self.__bank = bank
-        self.__account = account
-        self.__limit = limit
+        self._balance = 0
+        self._cutomer  = cutomer
+        self._bank = bank
+        self._account = account
+        self._limit = limit
 
     def get_customer(self):
         """ Return the name fo the customer """
-        return self.__cutomer
+        return self._cutomer
 
     def get_bank(self):
         """Return the name of the bank"""
 
-        return self.__bank
+        return self._bank
 
     def get_account(self):
         """Return account number """
-        return self.__account
+        return self._account
 
     def get_limit(self):
         """Return the credit card limit"""
-        return self.__limit
+        return self._limit
 
-    def _get_balance(self):
+    def get_balance(self):
         """Return the credit card balance"""
-        return self.__balance
+        return self._balance
 
     def charge(self,amount):
         """
         Charge the credit card the amount when credit card limit is suffient
         Return True when charge was successful and False otherwise
         """
-        if amount + self.__balance > self.__limit:  #if charge would exceed the limit
+        if amount + self._balance > self._limit:  #if charge would exceed the limit
             return False   #charge is denied
 
         else:
-            self.__balance += amount
+            self._balance += amount
             return True
 
 
     def make_payment(self,amount):
         """Process the payment that reduce the balance of the credit card"""
-        self.__balance -= amount
+        self._balance -= amount
 
 
 
