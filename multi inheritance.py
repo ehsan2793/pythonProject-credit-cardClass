@@ -41,4 +41,5 @@ m = Machine('red','japan','toyoto','ehsan',2)
 
 m.print_info()
 m.door
+
 m.add_door()
