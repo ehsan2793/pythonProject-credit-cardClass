@@ -24,12 +24,16 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 
 print('Welcome to Tresure Island.\nYour mission is to find the the tresure')
 
-choice= input("Youre at a cross road. Where do you want to go? Type 'left' or 'right' ")
+choice= input("Youre at a cross road. Where do you want to go? Type 'left' or 'right' ").lower()
 
 if  choice == 'left':
-    choice= input('You come to a Lake. There is an island in the middle of the Lake. Type "wait" to wait for a boat. Type "swim" to swim across.')
+    choice= input('You come to a Lake. There is an island in the middle of the Lake. Type "wait" to wait for a boat. Type "swim" to swim across.').lower()
     if choice == 'swim':
-        pass
+        choice = input("you waited for few hours and magical beast apeard in fornt of you. It offered you a ride do you accpet Type 'yes' or 'no' ").lower()
+        if choice == 'yes':
+            choice = input('beast gave you ride to island and ask you to give him half of the tresure. do you accpet Type "yes" or "no" ').lower()
+            if choice == 'yes':
+                pass
 
     else:
         choice= input('You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which color do you choose?')
