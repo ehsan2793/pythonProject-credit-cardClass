@@ -9,6 +9,8 @@ while should_continue:
 
     again = input("Type 'yes' to continue otherwise type 'no'. \n")
     should_continue = True if again == 'yes' else False
+    if  not should_continue:
+        print('goodbye')
 
 
 
