@@ -23,14 +23,13 @@ def decrypt(text,shift):
         index = alphabet.index(i) - shift
         if index < 0:
             index  = 26 - (-index)
-            print(index)
         res.append(alphabet[index])
 
     return "".join(res)
 
 
 
-
-
-encrypt(text,shift)
-decrypt(encrypt(text,shift),shift)
+if direction  == 'encode':
+    print(encrypt(text,shift))
+elif direction == 'decode':
+    print(decrypt(text,shift))
