@@ -15,7 +15,7 @@ while should_continue:
 
 
 # def encrypt(text,shift)-> str:
-#     res = []
+      # res = []
 #     for i in text:
 #         index = alphabet.index(i)
 #         new_position = index + shift
