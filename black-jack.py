@@ -1,4 +1,11 @@
 import random
+logo = ''''
+██████╗░██╗░░░░░░█████╗░░█████╗░██╗░░██╗░░░░░██╗░█████╗░░█████╗░██╗░░██╗
+██╔══██╗██║░░░░░██╔══██╗██╔══██╗██║░██╔╝░░░░░██║██╔══██╗██╔══██╗██║░██╔╝
+██████╦╝██║░░░░░███████║██║░░╚═╝█████═╝░░░░░░██║███████║██║░░╚═╝█████═╝░
+██╔══██╗██║░░░░░██╔══██║██║░░██╗██╔═██╗░██╗░░██║██╔══██║██║░░██╗██╔═██╗░
+██████╦╝███████╗██║░░██║╚█████╔╝██║░╚██╗╚█████╔╝██║░░██║╚█████╔╝██║░╚██╗
+╚═════╝░╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝'''
 cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
 
 def calculate_score(cards):
@@ -34,6 +41,7 @@ def compare(user_score , computer_score):
         return "You lose"
 
 def play_blackjack():
+    print(logo)
     user_card = []
     computer_card = []
 
@@ -68,7 +76,7 @@ def play_blackjack():
 
     print(f"Your final hand: {user_card}, final score: {user_score}")
     print(f"Computer's cards: {computer_card}, final score: {computer_score}")
-    compare(user_score,computer_score)
+    print(compare(user_score,computer_score))
 
 while input('Do you want to play Blackjack? "y" or "n": ') == 'y':
     play_blackjack()
