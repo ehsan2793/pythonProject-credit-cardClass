@@ -27,19 +27,19 @@ for _ in range(2):
     computer_card.append(deal_cards())
 
 
+while not is_game_over:
 
-user_score = calculate_score(user_card)
-computer_score = calculate_score(computer_card)
+    user_score = calculate_score(user_card)
+    computer_score = calculate_score(computer_card)
 
-print(f"Your cards: {user_card}, current total: {user_score}")
-print(f"Computer's cards: [{computer_card[0]},*]")
+    print(f"Your cards: {user_card}, current total: {user_score}")
+    print(f"Computer's cards: [{computer_card[0]},*]")
 
-if user_score == 0 or computer_score == 0 or user_score > 21:
-    is_game_over = True
-else:
-    user_another_card = input('Type "y" to get another card, type "n" to pass:' )
-    if user_another_card == 'y':
-        user_card.append(deal_cards())
-    else:
+    if user_score == 0 or computer_score == 0 or user_score > 21:
         is_game_over = True
-        
+    else:
+        user_another_card = input('Type "y" to get another card, type "n" to pass:' )
+        if user_another_card == 'y':
+            user_card.append(deal_cards())
+        else:
+            is_game_over = True
