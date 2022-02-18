@@ -46,6 +46,3 @@ def gng():
 
 while input("Do you want to play GNG: 'yes' or 'no': ") == "yes":
     gng()
-
-
-    
