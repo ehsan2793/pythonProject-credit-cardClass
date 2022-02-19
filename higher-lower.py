@@ -9,33 +9,40 @@ logo = """
 ╚═╝░░╚═╝╚═╝░╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝  ░╚════╝░╚═╝░░╚═╝  ╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░░╚══════╝╚═╝░░╚═╝
 
 """
-def compare(Choice,B,A):
-    if Choice == 'A':
-        return A['follower_count'] > B['follower_count']
-    else:
-        return B['follower_count'] > A['follower_count']
-game_ends = False
+def format_data(data):
+    data_name = data["name"]
+    data_descr = data["description"]
+    data_country = data["country"]
+    return f"{data_name}, a {data_descr}, from {data_country}"
+def check_answer(guess, a_followers, b_followers):
+  """Take the user guess and follower counts and returns if they got it right."""
+  if a_followers > b_followers:
+    return guess == "a"
+  else:
+    return guess == "b"
+
+print(logo)
 score = 0
-while not game_ends:
-    endRange = len(data) -1
+end_of_game = False
 
-    randomNum1 = random.randint(0,endRange)
-    randomNum2 = random.randint(0,endRange)
+data_b = random.choice(data)
 
-    item1 = data[randomNum1]
-    item2 = data[randomNum2]
+while not end_of_game:
+    data_a = data_b
+    data_b = random.choice(data)
+    if data_a == data_b:
+        data_b = random.choice(data)
 
-
-    item1['name']
-
-    print(f" A: {item1['name']}, {item1['description']}, from {item1['country']}")
-    print(f" B: {item2['name']}, {item2['description']}, from {item2['country']}")
-
-    choice = input("who has more followers: ")
-    result = compare(choice,item1,item2)
-
-    if result:
-        score +=1
+    print(f"compare A: {format_data(data_a)}.")
+    print("VS.")
+    print(f"compare B: {format_data(data_b)}")
+    guess = input("Who has more followers? Type 'A' or 'B': ").lower()
+    a_follower_count = data_a["follower_count"]
+    b_follower_count = data_b["follower_count"]
+    is_correct = check_answer(guess, a_follower_count, b_follower_count)
+    if is_correct:
+        score += 1
+        print(f"You're right! Current score: {score}.")
     else:
-        print(f"You lose and your score is {score}")
-        game_ends = True
+        end_of_game = True
+        print(f"Sorry, that's wrong. Final score: {score}.")
