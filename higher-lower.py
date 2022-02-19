@@ -1,5 +1,6 @@
 from higher_lower_data import data
 import random
+
 logo = """
 ██╗░░██╗██╗░██████╗░██╗░░██╗███████╗██████╗░  ░█████╗░██████╗░  ██╗░░░░░░█████╗░░██╗░░░░░░░██╗███████╗██████╗░
 ██║░░██║██║██╔════╝░██║░░██║██╔════╝██╔══██╗  ██╔══██╗██╔══██╗  ██║░░░░░██╔══██╗░██║░░██╗░░██║██╔════╝██╔══██╗
@@ -9,17 +10,22 @@ logo = """
 ╚═╝░░╚═╝╚═╝░╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝  ░╚════╝░╚═╝░░╚═╝  ╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░░╚══════╝╚═╝░░╚═╝
 
 """
+
+
 def format_data(data):
     data_name = data["name"]
     data_descr = data["description"]
     data_country = data["country"]
     return f"{data_name}, a {data_descr}, from {data_country}"
+
+
 def check_answer(guess, a_followers, b_followers):
-  """Take the user guess and follower counts and returns if they got it right."""
-  if a_followers > b_followers:
-    return guess == "a"
-  else:
-    return guess == "b"
+    """Take the user guess and follower counts and returns if they got it right."""
+    if a_followers > b_followers:
+        return guess == "a"
+    else:
+        return guess == "b"
+
 
 print(logo)
 score = 0
