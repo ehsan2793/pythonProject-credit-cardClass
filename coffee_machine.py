@@ -23,7 +23,11 @@ MENU = {
         "cost": 3.0,
     }
 }
-
+resources = {
+    "water": 300,
+    "milk": 200,
+    "coffee": 100,
+}
 
 def enough_resource(ingredients):
     for item in ingredients:
@@ -62,11 +66,7 @@ def make_coffee(choice,resources, ingredients):
 
 profit = 0
 
-resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
-}
+
 is_on = True
 while is_on:
     choice = input('What would you like ? (espresso/latte/cappuccino): ')
@@ -88,3 +88,5 @@ while is_on:
 
 
 print(profit,resources)
+
+
